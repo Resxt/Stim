@@ -1,5 +1,7 @@
 package com.resxt.stim;
 
+import com.resxt.stim.controllers.AppController;
+import com.resxt.stim.controllers.SteamAppController;
 import com.resxt.stim.models.SteamApp;
 import com.resxt.stim.services.SteamAppService;
 import javafx.application.Application;
@@ -28,31 +30,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        ScrollPane scrollPane = new ScrollPane();
-        GridPane gridPane = new GridPane();
-        int row = 0;
-        int column = 0;
-
-        for (SteamApp steamApp : SteamAppService.getSteamApps()) {
-            Image image = new Image(steamApp.getHeaderImageUrl(), true);
-            ImageView imageView = new ImageView(image);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    System.out.println(steamApp.getAppId() + " clicked");
-                }
-            });
-            gridPane.add(imageView, column, row);
-            column++;
-            if (column % 2 == 0 && column > 0) {
-                row++;
-                column = 0;
-            }
-        }
-
-        scrollPane.setContent(gridPane);
-        Scene newScene = new Scene(scrollPane);
-        stage.setScene(newScene);
+        stage.setScene(AppController.getScene(stage));
     }
 
     public static void main(String[] args) {
