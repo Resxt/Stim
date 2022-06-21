@@ -1,0 +1,87 @@
+#root
+{
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-background-color: #262626;
+    
+    -fx-font-family: "Arial";   
+}
+
+.label
+{
+    -fx-font-size: 11px;
+    -fx-text-fill: #CFCFCF;
+}
+
+#titleBar
+{
+    -fx-background-color: linear-gradient(#1C2732, #262626);
+}
+
+#titleBar > .label
+{
+    -fx-text-fill: #E2E2E2;
+}
+
+#btn_close
+{
+    -fx-font-size: 12px;
+    -fx-text-fill: #AFADAD;
+    
+    -fx-background-color: transparent;
+}
+
+#btn_close:hover
+{
+    -fx-text-fill: #F1F1F1;
+}
+
+.steam_button
+{
+	-fx-font-size: 10px;
+        -fx-text-fill: #CFCFCF;
+	-fx-alignment: CENTER-LEFT;
+		
+	-fx-background-color: linear-gradient(#505050, #3A3A3A);
+        
+	-fx-background-radius: 0;
+	-fx-border-radius: 0;
+        
+        -fx-pref-height: 23;
+}
+
+.steam_button:focused
+{
+	-fx-background-color: linear-gradient(#696969, #3B3B3B);
+}
+
+.steam_button:hover
+{
+	-fx-background-color: linear-gradient(#626262, #4B4947);
+}
+
+.steam_button:disabled
+{
+    -fx-text-fill: #737373;
+    -fx-background-color: #2C2C2C;
+    -fx-opacity: 1.0;
+}
+
+.steam_textfield
+{
+	-fx-border-color: #595959;
+	-fx-background-color: #2D2D2D;
+        
+        -fx-text-fill: #CFCFCF;
+        -fx-font-size: 11px;
+        
+        -fx-min-height: 22;
+        -fx-pref-height: 22;
+}
+
+.steam_textfield:focused
+{
+	-fx-border-color: #898989;
+	-fx-background-color: #313131;
+}

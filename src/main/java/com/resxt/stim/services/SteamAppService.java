@@ -5,13 +5,13 @@ import com.resxt.stim.models.SteamApp;
 
 public class SteamAppService {
 
-    SteamAppDao dao = new SteamAppDao();
+    private static final SteamAppDao dao = new SteamAppDao();
 
-    public SteamApp getSteamApp(int appId) {
+    public static SteamApp getSteamApp(int appId) {
         return dao.getSteamApp(appId);
     }
 
-    public SteamApp[] getSteamApps() {
+    public static SteamApp[] getSteamApps() {
         return dao.getSteamApps();
     }
 }
