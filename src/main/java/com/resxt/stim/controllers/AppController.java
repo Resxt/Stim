@@ -50,7 +50,7 @@ public class AppController {
                         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
                         stage.setScene(scene);
                         SteamAppController steamAppController = fxmlLoader.getController();
-                        steamAppController.initData(steamApp, stage);
+                        steamAppController.init(steamApp, stage);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

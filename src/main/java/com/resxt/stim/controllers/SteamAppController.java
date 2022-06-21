@@ -2,14 +2,13 @@ package com.resxt.stim.controllers;
 
 import com.resxt.stim.models.SteamApp;
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-
-import java.lang.reflect.Field;
 
 public class SteamAppController {
     @FXML private VBox root;
@@ -30,12 +29,18 @@ public class SteamAppController {
     //@FXML private Text legalNotice;
 
     private Stage stage;
-    public void initData(SteamApp app, Stage stage) {
+
+    public void init(SteamApp steamApp, Stage stage) {
+        initData(steamApp, stage);
+        setTextColors(Color.WHITE);
+        setTextAlignment(TextAlignment.CENTER);
+    }
+    private void initData(SteamApp app, Stage stage) {
         this.stage = stage;
 
         BackgroundImage backgroundImage = new BackgroundImage(new Image(app.getBackgroundImageUrl(),true),
-                BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER,
-                BackgroundSize.DEFAULT);
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                new BackgroundSize(1.0, 1.0, true, true, false, false));
         root.setBackground(new Background(backgroundImage));
 
         descriptionShort.setWrappingWidth(stage.getX() / 1.5);
@@ -61,6 +66,40 @@ public class SteamAppController {
         supportUrl.setText("Support: " + app.getSupportUrl());
         supportEmail.setText("Email: " + app.getSupportEmail());
         //legalNotice.setText(app.getLegalNotice());
+    }
+
+    // Temporary solution. Should be done in the css file
+    private void setTextColors(Color color) {
+        name.setFill(color);
+        descriptionShort.setFill(color);
+        price.setFill(color);
+        releaseDate.setFill(color);
+        positiveRecommendations.setFill(color);
+        supportedLanguages.setFill(color);
+        developers.setFill(color);
+        publishers.setFill(color);
+        pcRequirementsMinimum.setFill(color);
+        pcRequirementsRecommended.setFill(color);
+        website.setFill(color);
+        supportUrl.setFill(color);
+        supportEmail.setFill(color);
+    }
+
+    // Temporary solution. Should be done in the css file
+    private void setTextAlignment(TextAlignment textAlignment) {
+        name.setTextAlignment(textAlignment);
+        descriptionShort.setTextAlignment(textAlignment);
+        price.setTextAlignment(textAlignment);
+        releaseDate.setTextAlignment(textAlignment);
+        positiveRecommendations.setTextAlignment(textAlignment);
+        supportedLanguages.setTextAlignment(textAlignment);
+        developers.setTextAlignment(textAlignment);
+        publishers.setTextAlignment(textAlignment);
+        pcRequirementsMinimum.setTextAlignment(textAlignment);
+        pcRequirementsRecommended.setTextAlignment(textAlignment);
+        website.setTextAlignment(textAlignment);
+        supportUrl.setTextAlignment(textAlignment);
+        supportEmail.setTextAlignment(textAlignment);
     }
 
     @FXML

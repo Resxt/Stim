@@ -26,7 +26,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("app.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
-        stage.setTitle("Hello!");
+        stage.setTitle("Stim");
         stage.setScene(scene);
         stage.show();
 
